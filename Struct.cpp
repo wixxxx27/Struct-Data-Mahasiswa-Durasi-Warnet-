@@ -167,85 +167,85 @@ int main() {
 
 
 
-// //PROGRAM HITUNG DURASI RENTAL WARNET
-// #include <iostream>
-// #include <iomanip>
+//PROGRAM HITUNG DURASI RENTAL WARNET
+#include <iostream>
+#include <iomanip>
 
-// using namespace std;
+using namespace std;
 
-// // INISIASI TARIF PER DETIK
-// const int TARIF_PER_30_DETIK = 130;
+// INISIASI TARIF PER DETIK
+const int TARIF_PER_30_DETIK = 130;
 
-// // FUNGSI KONVERSI WAKTU MENJADI DETIK 
-// int konversiKeDetik(int jam, int menit, int detik) {
-//     return (jam * 3600) + (menit * 60) + detik;
-// }
+// FUNGSI KONVERSI WAKTU MENJADI DETIK 
+int konversiKeDetik(int jam, int menit, int detik) {
+    return (jam * 3600) + (menit * 60) + detik;
+}
 
-// // FUNGSI MENGHITUNG DURASI RENTAL
-// int hitungBiaya(int durasi) {
-//     return (durasi / 30) * TARIF_PER_30_DETIK;
-// }
+// FUNGSI MENGHITUNG DURASI RENTAL
+int hitungBiaya(int durasi) {
+    return (durasi / 30) * TARIF_PER_30_DETIK;
+}
 
-// //FUNGSI UTAMA (TAMPILAN UTAMA SAAT KODE DI JALANKAN)
-// int main() {
-//     int jamMulai, menitMulai, detikMulai;
-//     int jamSelesai, menitSelesai, detikSelesai;
-
-    
-//     cout << "=============================================" << endl;
-//     cout << "           WARNET NET NET ZONET              " << endl;
-//     cout << "=============================================" << endl;
-
-
-//     cout << "\n Masukkan Waktu Mulai\n";
-//     cout << "------------------------------" << endl;
-//     cout << " Jam   : "; cin >> jamMulai;
-//     cout << " Menit : "; cin >> menitMulai;
-//     cout << " Detik : "; cin >> detikMulai;
+//FUNGSI UTAMA (TAMPILAN UTAMA SAAT KODE DI JALANKAN)
+int main() {
+    int jamMulai, menitMulai, detikMulai;
+    int jamSelesai, menitSelesai, detikSelesai;
 
     
-//     cout << "\n Masukkan Waktu Selesai\n";
-//     cout << "------------------------------" << endl;
-//     cout << " Jam   : "; cin >> jamSelesai;
-//     cout << " Menit : "; cin >> menitSelesai;
-//     cout << " Detik : "; cin >> detikSelesai;
+    cout << "=============================================" << endl;
+    cout << "           WARNET NET NET ZONET              " << endl;
+    cout << "=============================================" << endl;
 
-//     // Konversi waktu ke detik
-//     int totalDetikMulai = konversiKeDetik(jamMulai, menitMulai, detikMulai);
-//     int totalDetikSelesai = konversiKeDetik(jamSelesai, menitSelesai, detikSelesai);
 
-//     // PERKONDISIAN (MEMEASTIKAN WAKTU SELESAI TIDAK LEBIH KECIL DARI WAKTU MULAI)
-//     if (totalDetikSelesai < totalDetikMulai) {
-//         cout << "\n Waktu selesai tidak boleh lebih kecil dari waktu mulai!\n";
-//         return 1;
-//     }
+    cout << "\n Masukkan Waktu Mulai\n";
+    cout << "------------------------------" << endl;
+    cout << " Jam   : "; cin >> jamMulai;
+    cout << " Menit : "; cin >> menitMulai;
+    cout << " Detik : "; cin >> detikMulai;
 
-//     //HITUNG DURASI MENGGUNAKAN DETIK
-//     int durasiDetik = totalDetikSelesai - totalDetikMulai;
-
-//     // KONVERSI WAKTU DARI DETIK MENJADI JAM & MENIT 
-//     int durasiJam = durasiDetik / 3600;
-//     int sisaDetik = durasiDetik % 3600;
-//     int durasiMenit = sisaDetik / 60;
-//     int durasiSisaDetik = sisaDetik % 60;
-
-//     // HIUTNG BIAYA RENTAL
-//     int biaya = hitungBiaya(durasiDetik);
-
-//     // OUTPUT HASIL
-//     cout << "---------------------------------------------" << endl;
-//     cout << " Durasi rental: " 
-//         << setw(2) << setfill('0') << durasiJam << " jam " 
-//         << setw(2) << setfill('0') << durasiMenit << " menit " 
-//         << setw(2) << setfill('0') << durasiSisaDetik << " detik\n";
-//     cout << "---------------------------------------------" << endl;
-//     cout << " Total biaya  : Rp. " << biaya << ",-\n";
-//     cout << "=============================================" << endl;
     
-//     cout << " Terima kasih telah menggunakan layanan warnet kami!  :)\n";
-//     cout << "=============================================" << endl;
-//     return 0;
-// }
+    cout << "\n Masukkan Waktu Selesai\n";
+    cout << "------------------------------" << endl;
+    cout << " Jam   : "; cin >> jamSelesai;
+    cout << " Menit : "; cin >> menitSelesai;
+    cout << " Detik : "; cin >> detikSelesai;
+
+    // Konversi waktu ke detik
+    int totalDetikMulai = konversiKeDetik(jamMulai, menitMulai, detikMulai);
+    int totalDetikSelesai = konversiKeDetik(jamSelesai, menitSelesai, detikSelesai);
+
+    // PERKONDISIAN (MEMEASTIKAN WAKTU SELESAI TIDAK LEBIH KECIL DARI WAKTU MULAI)
+    if (totalDetikSelesai < totalDetikMulai) {
+        cout << "\n Waktu selesai tidak boleh lebih kecil dari waktu mulai!\n";
+        return 1;
+    }
+
+    //HITUNG DURASI MENGGUNAKAN DETIK
+    int durasiDetik = totalDetikSelesai - totalDetikMulai;
+
+    // KONVERSI WAKTU DARI DETIK MENJADI JAM & MENIT 
+    int durasiJam = durasiDetik / 3600;
+    int sisaDetik = durasiDetik % 3600;
+    int durasiMenit = sisaDetik / 60;
+    int durasiSisaDetik = sisaDetik % 60;
+
+    // HIUTNG BIAYA RENTAL
+    int biaya = hitungBiaya(durasiDetik);
+
+    // OUTPUT HASIL
+    cout << "---------------------------------------------" << endl;
+    cout << " Durasi rental: " 
+        << setw(2) << setfill('0') << durasiJam << " jam " 
+        << setw(2) << setfill('0') << durasiMenit << " menit " 
+        << setw(2) << setfill('0') << durasiSisaDetik << " detik\n";
+    cout << "---------------------------------------------" << endl;
+    cout << " Total biaya  : Rp. " << biaya << ",-\n";
+    cout << "=============================================" << endl;
+    
+    cout << " Terima kasih telah menggunakan layanan warnet kami!  :)\n";
+    cout << "=============================================" << endl;
+    return 0;
+}
 
 
 
